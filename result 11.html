@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Result Page</title>
+  </head>
+  {% load static %}
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-dark bg-dark justify-content-center">
+    <div class="container">
+      <a class="navbar-brand" href="">
+      <img src="{% static 'myapp/icon.png' %}" alt="S" width="48" height="48">
+        Fake Currency Detector
+      </a>
+    </div>
+      </nav>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 text-center" style="padding:50px;">
+  <div class="col">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h3 class="card-title">Original Image Before Image Processing</h3>
+        <p class="card-text">{{ original_image|safe }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h3 class="card-title">Edged Image After Image Processing</h3>
+        <p class="card-text">{{ edge_image|safe }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-2 row-cols-md-4 g-4 text-center" style="padding:30px;">
+  <div class="col">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h3 class="card-title">VARIANCE</h3>
+        <p class="card-text">{{ variance|safe }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h3 class="card-title">SKEWNESS</h3>
+        <p class="card-text">{{ skew|safe }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h3 class="card-title">KURTOSIS</h3>
+        <p class="card-text">{{ kurtosis|safe }}</p>
+      </div>
+    </div>
+  </div>
+    <div class="col">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h3 class="card-title">ENTROPY</h3>
+        <p class="card-text">{{ entropy|safe }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-2 row-cols-md-2 g-4 text-center" style="padding:30px;">
+  <div class="col">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h3 class="card-title">ACCURACY</h3>
+        <p class="card-text">{{ accuracy|safe }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h3 class="card-title">RESULT : {{ result|safe }}</h3>
+        <p class="card-text">{{ out|safe }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </body>
+</html>
